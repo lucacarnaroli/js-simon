@@ -23,10 +23,11 @@ function bannerNum() {
     var putNum = parseInt(prompt('Inserisci un numero alla volta'));
     if (arrayBanner.includes(putNum)) {
       arrayUtente.push(putNum);
-      console.log(arrayUtente);
     }
   }
+  console.log('Numeri presi: ' + arrayUtente.length + '  ' + 'Numeri indovinati: ' + ' ' + arrayUtente);
 }
+
 clearTimeout(bannerNum);
 
 // FUNZIONI
