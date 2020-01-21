@@ -4,16 +4,33 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
 
+
+var numEstratto = numRandom(1,100);
+var arrayBanner = [];
+var arrayUtente = [];
+console.log(arrayBanner);
+
+for (var i = 0; i < 5; i++) {
+  arrayBanner.push(numRandom(1,100));
+}
+alert(arrayBanner);
+
+
 setTimeout(bannerNum, 2000);
-var banner = alert('1 32 45 6 8 9 10');
-var array = [];
+
 function bannerNum() {
   for (var i = 0; i < 5; i++) {
-    var putNum = prompt('Inserisci un numero alla volta');
-    if (putNum == banner) {
-      array.push(putNum);
-    }
+    var putNum = parseInt(prompt('Inserisci un numero alla volta'));
+    arrayUtente.push(putNum);
+    console.log(arrayUtente);
+    
   }
 }
 clearTimeout(bannerNum);
-console.log(array);
+
+// FUNZIONI
+function numRandom(min,max){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random()* (max - min + 1) ) + min;
+}
