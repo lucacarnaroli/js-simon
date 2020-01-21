@@ -21,9 +21,10 @@ setTimeout(bannerNum, 2000);
 function bannerNum() {
   for (var i = 0; i < 5; i++) {
     var putNum = parseInt(prompt('Inserisci un numero alla volta'));
-    arrayUtente.push(putNum);
-    console.log(arrayUtente);
-    
+    if (arrayBanner.includes(putNum)) {
+      arrayUtente.push(putNum);
+      console.log(arrayUtente);
+    }
   }
 }
 clearTimeout(bannerNum);
