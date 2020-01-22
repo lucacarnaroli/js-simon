@@ -3,8 +3,6 @@
 // Dopo 30 secondi l'utente deve inserire un prompt alla volta i numeri che ha visto precedentemente.
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
-
-
 var numEstratto = numRandom(1,100);
 var arrayBanner = [];
 var arrayUtente = [];
@@ -15,20 +13,19 @@ for (var i = 0; i < 5; i++) {
 }
 alert(arrayBanner);
 
-
 setTimeout(bannerNum, 2000);
 
 function bannerNum() {
   for (var i = 0; i < 5; i++) {
-    var putNum = parseInt(prompt('Inserisci un numero alla volta'));
+    var putNum = parseInt(prompt('Inserisci un numero alla volta, rispetto a quelli precedenti'));
     if (arrayBanner.includes(putNum)) {
       arrayUtente.push(putNum);
     }
   }
-  console.log('Numeri presi: ' + arrayUtente.length + '  ' + 'Numeri indovinati: ' + ' ' + arrayUtente);
+  console.log('Numeri presi: ' + arrayUtente.length + ' ' + 'Numeri indovinati: ' + ' ' + arrayUtente);
+  alert('Numeri presi: ' + arrayUtente.length + ' ' + 'Numeri indovinati: ' + ' ' + arrayUtente);
 }
 
-clearTimeout(bannerNum);
 
 // FUNZIONI
 function numRandom(min,max){
